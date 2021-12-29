@@ -1,0 +1,17 @@
+.task {
+    background: 	#B0B0B0;
+    margin: 5px;
+    padding: 10px 20px;
+  }
+
+  .task-row{
+    display: flex;
+    justify-content: space-between;   /* adjustment */
+    position: relative;
+    align-items: center;
+  }
+
+  
+
+
+  

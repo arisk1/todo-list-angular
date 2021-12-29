@@ -1,0 +1,24 @@
+<form *ngIf="showFormBoolean" [ngStyle]="{ 'margin-bottom' : '40px' }" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="text">Task</label>
+        <input type="text" id="text" name="text" placeholder="Update Task" [(ngModel)]="text" />
+    </div>
+    <div class="form-control">
+        <label for="day">Day & Time</label>
+        <input type="text" id="day" name="day" placeholder="Update Day & Time" [(ngModel)]="day" />
+    </div>
+    <div class="custom-div">
+        <label for="status">Status</label>
+        <div>
+            <input id="status" type="radio" value="pending" name="status" [(ngModel)]="status">
+            <label class="radio-buttons"for="male">Pending</label>
+        </div>
+        <div>
+            <input  id="status" type="radio" value="complete" name="status" [(ngModel)]="status">
+            <label class="radio-buttons" for="male">Complete</label>
+        </div>
+     </div>
+    <input  type="submit" value="Update Task" class="btn btn-block-update" />
+</form>
+
+
