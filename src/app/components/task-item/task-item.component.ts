@@ -11,9 +11,10 @@ export class TaskItemComponent implements OnInit {
   @Input() task! : TASK;
 
   @Output() onDeleteTask : EventEmitter<TASK> = new EventEmitter();
+  @Output() onUpdateTask : EventEmitter <{[key:string]: any}> = new EventEmitter();
 
   showForm : boolean = false;
-
+  // taskId? : number  = this.task.id;
   constructor() { }
 
   ngOnInit(): void {
@@ -25,6 +26,10 @@ export class TaskItemComponent implements OnInit {
 
   toggleUpdateForm() {
     this.showForm = !this.showForm
+  }
+
+  updateTask(updatedTask :  {[key:string]: any} ){
+    this.onUpdateTask.emit(updatedTask);
   }
 
 }

@@ -29,4 +29,9 @@ export class TaskService {
     const url = `${this.apiUrl}/${task.id}`;
     return this.http.delete<TASK>(url);
   }
+
+  updateTask(task: {[key:string]: any}) :Observable<TASK>{
+    const url = `${this.apiUrl}/${task['id']}`;
+   return this.http.patch<TASK>(url,task,httpOptions);
+  }
 }

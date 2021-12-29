@@ -1,4 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { TASK } from 'src/app/Task';
 
 @Component({
   selector: 'app-update-task',
@@ -8,6 +9,9 @@ import { Component, OnInit,Input } from '@angular/core';
 export class UpdateTaskComponent implements OnInit {
 
   @Input() showFormBoolean! : boolean;
+  @Input() taskId? : number;
+
+  @Output() onUpdateTask : EventEmitter <{[key:string]: any}> = new EventEmitter();
 
   text : string = "";
   day : string = "";
@@ -34,7 +38,16 @@ export class UpdateTaskComponent implements OnInit {
         updatedTask['status'] = true;
       }
     }
-    console.log(updatedTask)
+    if(Object.keys(updatedTask).length !== 0){
+      updatedTask['id'] = this.taskId;
+      this.onUpdateTask.emit(updatedTask);
+    }else{
+      alert('You did not request updates')
+    }
+
+    this.text = '';
+    this.day ='';
+    this.status = '';
   }
 
 }

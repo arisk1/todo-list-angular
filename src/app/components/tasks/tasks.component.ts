@@ -29,4 +29,21 @@ export class TasksComponent implements OnInit {
     })
   }
 
+  updateTask(updatedTask :  {[key:string]: any} ){
+    this.taskService.updateTask(updatedTask).subscribe((task)=>{
+      if(task.text){
+        this.tasks[updatedTask['id'] - 1].text = task.text;
+      }
+      if(task.day){
+        this.tasks[updatedTask['id'] - 1].day = task.day;
+      }
+      if(task.status){
+        this.tasks[updatedTask['id'] - 1].status = task.status;
+      }else{
+        this.tasks[updatedTask['id'] - 1].status = task.status;
+      }
+    })
+  }
+ 
+
 }
