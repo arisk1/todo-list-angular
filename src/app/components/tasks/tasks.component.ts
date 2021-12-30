@@ -47,18 +47,32 @@ export class TasksComponent implements OnInit {
   updateTask(updatedTask :  {[key:string]: any} ){
     this.taskService.updateTask(updatedTask).subscribe((task)=>{
       if(task.text){
-        this.tasks[updatedTask['id'] - 1].text = task.text;
+        this.tasks.map((t)=>{
+          if(t.id === updatedTask['id']){
+              t.text = task.text;
+          }
+        })
       }
       if(task.day){
-        this.tasks[updatedTask['id'] - 1].day = task.day;
+        this.tasks.map((t)=>{
+          if(t.id === updatedTask['id']){
+              t.day = task.day;
+          }
+        })
       }
       if(task.status){
-        this.tasks[updatedTask['id'] - 1].status = task.status;
+        this.tasks.map((t)=>{
+          if(t.id === updatedTask['id']){
+              t.status = task.status;
+          }
+        })
       }else{
-        this.tasks[updatedTask['id'] - 1].status = task.status;
+        this.tasks.map((t)=>{
+          if(t.id === updatedTask['id']){
+              t.status = task.status;
+          }
+        })
       }
-    })
+     })
   }
- 
-
 }

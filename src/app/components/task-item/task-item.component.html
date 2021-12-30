@@ -16,7 +16,7 @@
         Status : {{task.status ? "Complete" : "Pending"}}
     </h6>
     <app-update-task
-        [taskId]='task.id'
+        [task]='task'
         [showFormBoolean]="showForm"
         (onUpdateTask)="updateTask($event)"
     ></app-update-task>

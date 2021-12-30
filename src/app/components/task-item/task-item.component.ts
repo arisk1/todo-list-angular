@@ -14,7 +14,7 @@ export class TaskItemComponent implements OnInit {
   @Output() onUpdateTask : EventEmitter <{[key:string]: any}> = new EventEmitter();
 
   showForm : boolean = false;
-  // taskId? : number  = this.task.id;
+  
   constructor() { }
 
   ngOnInit(): void {

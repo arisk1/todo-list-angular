@@ -9,7 +9,7 @@ import { TASK } from 'src/app/Task';
 export class UpdateTaskComponent implements OnInit {
 
   @Input() showFormBoolean! : boolean;
-  @Input() taskId? : number;
+  @Input() task! : TASK;
 
   @Output() onUpdateTask : EventEmitter <{[key:string]: any}> = new EventEmitter();
 
@@ -39,7 +39,7 @@ export class UpdateTaskComponent implements OnInit {
       }
     }
     if(Object.keys(updatedTask).length !== 0){
-      updatedTask['id'] = this.taskId;
+      updatedTask['id'] = this.task.id;
       this.onUpdateTask.emit(updatedTask);
     }else{
       alert('You did not request updates')
