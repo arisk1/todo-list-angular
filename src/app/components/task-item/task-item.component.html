@@ -4,7 +4,7 @@
         {{task.text}}
         </h4>
         <div>
-            <app-button (click)="toggleUpdateForm()" className="task-btn" color="white" text="update"></app-button>
+            <app-button (click)="toggleUpdateForm()" className="task-btn" color="white" text="{{showForm ? 'close update form' : 'update'}}" ></app-button>
             <app-button (click)="onDelete(task)" className="task-btn" color="red" text="delete"></app-button>
         </div>
         

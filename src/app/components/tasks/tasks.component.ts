@@ -10,6 +10,8 @@ import {TASK} from '../../Task';
 export class TasksComponent implements OnInit {
 
   tasks: TASK[] = [];
+  p:any;
+  searchText = ''
 
   constructor(private taskService:TaskService) { }
 

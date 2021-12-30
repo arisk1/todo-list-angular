@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,6 +13,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AddTaskComponent } from './components/add-task/add-task.component'
 import { FormsModule } from '@angular/forms';
 import { UpdateTaskComponent } from './components/update-task/update-task.component';
+import { FilterPipe } from './pipes/filter.pipe'; 
 
 @NgModule({
   declarations: [
@@ -22,9 +23,11 @@ import { UpdateTaskComponent } from './components/update-task/update-task.compon
     TasksComponent,
     TaskItemComponent,
     AddTaskComponent,
-    UpdateTaskComponent
+    UpdateTaskComponent,
+    FilterPipe
   ],
   imports: [
+    NgxPaginationModule,
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
