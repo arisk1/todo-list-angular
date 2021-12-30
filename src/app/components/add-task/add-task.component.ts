@@ -11,7 +11,7 @@ export class AddTaskComponent implements OnInit {
 
   text : string = "";
   day: string = "";
-
+  
   constructor() { }
 
   ngOnInit(): void {

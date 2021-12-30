@@ -1,5 +1,5 @@
-<app-add-task (onAddTask)="addTask($event)"></app-add-task>
-<div class="form-control">
+<app-add-task *ngIf="showAddTask" (onAddTask)="addTask($event)"></app-add-task>
+<div *ngIf="showSearchTaskBar" class="form-control">
     <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
       [(ngModel)]="searchText" placeholder="Search through your tasks. . ." 
       autofocus>

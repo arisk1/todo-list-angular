@@ -2,4 +2,17 @@
     <h1>
         {{title}}
     </h1>
+    <div>
+        <app-button (btnClick)="toggleAddTask()" 
+        className='btn btn-header' 
+        text="{{showAddTask ? 'Close add task form' : 'Add'}}" 
+        color="green" >
+        </app-button>
+        <app-button 
+            (btnClick)="toggleSearchTaskBar()" 
+            className='btn btn-header' 
+            text="{{showSearchTaskBar? 'Close search bar' : 'Search'}}"  
+            color="grey" >
+        </app-button>
+    </div>
 </header>
